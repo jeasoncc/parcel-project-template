@@ -1,0 +1,111 @@
+.test {
+  // border: solid 1px red;
+}
+body {
+}
+.app {
+  // padding-top: 5rem;
+  overflow: hidden;
+  height: 100vh;
+  background: #f9f9f9;
+}
+#navbar {
+  // position: fixed;
+  // width: 100vw;
+  // top: 0;
+  // z-index: 100;
+  background: linear-gradient(to left, #28a5f5, #1e87f0);
+}
+#menus {
+  margin: 0;
+  padding-bottom: 10rem;
+  height: 90vh;
+  overflow-y: scroll;
+  @media screen and (min-width: 640px) {
+    // background:red;
+    &::-webkit-scrollbar {
+      width: 2px;
+      height: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(transparent),
+        to(transparent)
+      );
+      background: linear-gradient(180deg, transparent, transparent);
+      border-radius: 30px;
+      box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25),
+        inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+    }
+    &::-webkit-scrollbar-track {
+      background: linear-gradient(
+        90deg,
+        transparent,
+        transparent 1px,
+        transparent 0,
+        transparent
+      );
+    }
+  }
+}
+.item-li {
+  padding: 0.4rem !important;
+}
+.item-card {
+  cursor: pointer;
+  // border: solid 1px ;
+  padding: 0.8rem !important;
+  border: 1px solid #e5e5e5;
+  transition-duration: 1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  flex &:hover {
+    // border:none
+  }
+  // background: red;
+  border-radius: 10px;
+  // box-shadow: ;
+}
+.item-pra {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin: 0;
+}
+.item-header {
+  // color: red;
+  text-align: left;
+}
+.item-icon {
+  // background: red;
+  margin-right: 1rem;
+}
+.item-lists {
+  // border: solid 1px red;
+  border-right: 1px solid #e5e5e5;
+  background: transparent;
+}
+:focus {
+  outline: none;
+}
+// .uk-button {
+//   &::hove {
+//     border: none;
+//     outline: none;
+//   }
+//   &::focus {
+//     border: none;
+//     outline: none;
+//   }
+//   &::active {
+//     border: none;
+//     outline: none;
+//   }
+
+// }
+

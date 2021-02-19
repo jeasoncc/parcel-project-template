@@ -1,15 +1,59 @@
 <!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Заголовок страницы</title>
-  </head>
-  <body>
-    <!-- Так добавляются фрагменты в главные HTML-файлы страниц. -->
-    <include src="./partials/example.html"></include>
+<html lang="zh">
 
-    <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
-    <script src="./index.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>timeline</title>
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalizecss@3.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/css/uikit.min.css" />
+  <style>
+
+  </style>
+  <!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/js/uikit-icons.min.js"></script>
+</head>
+
+<body>
+  <div class="app">
+
+    <div class="uk-section-primary uk-preserve-color" uk-sticky=" animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky;
+      cls-inactive: uk-navbar-transparent uk-light; top: 200">
+      <nav class="uk-navbar-container" uk-navbar="dropbar: true;">
+        <div class="uk-navbar-left">
+          <ul class="uk-navbar-nav">
+            <li>
+              <a href="#">Parent</a>
+            </li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-navbar-nav">
+            <li>
+              <a href="#">Parent</a>
+            </li>
+            <li><a href="#">Item</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="uk-container uk-container-expand test uk-padding-small  " uk-grid>
+      <div class="uk-card  uk-card-body uk-width-1-2@s uk-width-1-6@m test item-lists uk-visible@m ">
+        <ul id="parts" class="uk-nav-default uk-nav-parent-icon uk-padding-small"" uk-nav uk-margin>
+          <!-- <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: table"></span> Item</a></li>
+          <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span> Item</a></li> -->
+          <!-- <li class="uk-nav-divider"></li> -->
+        </ul>
+      </div>
+      <div id="menus" class="uk-width-expand@m " uk-grid></div>
+    </div>
+  </div>
+
+  <script src=" ./index.js"></script>
+</body>
+
 </html>
