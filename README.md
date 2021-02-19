@@ -4,7 +4,6 @@
 
 
 ![首页](src/images/1.jpg  )
-![首页](src/images/2.jpg  )
 
 
 
