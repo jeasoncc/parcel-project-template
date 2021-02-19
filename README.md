@@ -1,93 +1,94 @@
-# parcel-project-template
+# WebStack-Laravel
 
-## Developing
+一个开源的网址导航网站项目，具备完整的前后台，您可以拿来制作自己的网址导航。
 
-### Prerequisites
+![首页](src/images/1.jpg  )
 
-На компьютере должен быть установлен [Node.js](https://nodejs.org/en/).
 
-Для корректной работы SASS-компилятора и других инструментов, необходимо один
-раз глобально поставить дополнительные пакеты, выполнив в терминале следующие
-команды. Пользователям MacOS ничего делать не нужно.
 
-Пользователям **Windows**, в режиме администратора.
-[Как запусттить Powershell](https://youtu.be/p2tFnxcymwk) в режиме
-администратора.
+## 部署
+
+克隆代码：
 
 ```shell
-npm install --global --production windows-build-tools
+git clone https://github.com/hui-ho/WebStack-Laravel.git
 ```
 
-Вот как выглядит процесс успешной установки для пользователей **Windows**.
-
-![Установка windows-build-tools](https://user-images.githubusercontent.com/1426799/45007904-bde9f280-afb4-11e8-8a35-c77dffaffa2a.gif)
-
-Пользователям **Linux**.
+安装依赖：
 
 ```shell
-sudo apt-get install gcc g++ make
+$ composer install
 ```
 
-### Setting up Dev
+编辑配置：
 
-Один раз на проект установить все зависимости.
+```
+$ cp .env.example .env
+```
+
+```
+...
+DB_DATABASE=database
+DB_USERNAME=username
+DB_PASSWORD=password
+...
+```
+
+生成 KEY：
 
 ```shell
-npm install
+$ php artisan key:generate  
 ```
 
-И запустить режим разработки.
+迁移数据：
 
 ```shell
-npm run dev
+php artisan migrate:refresh --seed
 ```
 
-Во вкладке браузера перейти по адресу
-[http://localhost:1234](http://localhost:1234).
-
-### Building
-
-Для того чтобы создать оптимизированные файлы для хостинга, необходимо выполнить
-следующую команду. В корне проекта появится папка `build` со всеми
-оптимизированными ресурсами.
+本地测试：
 
 ```shell
-npm run build
+$ php artisan serve
 ```
 
-### Deploying / Publishing
+安装完成：http://127.0.0.1:8000
 
-Сборка может автоматически деплоить билд на GitHub Pages удаленного (remote)
-репозитория. Для этого необходимо в файле `package.json` отредактировать поле
-`homepage`, заменив имя пользователя и репозитория на свои.
+> 有些朋友对部署表示有压力，但这和一般的 Laravel 应用是没有区别的，线上环境可以参考：https://github.com/summerblue/laravel-ubuntu-init
 
-```json
-"homepage": "https://имя_пользователя.github.io/имя_репозитория"
-```
 
-Также необходимо отредактировать скрипт "predeploy".
+## 使用
 
-```json
-"predeploy": "npm run build -- --public-url /имя_репозитория/"
-```
+后台地址：http://domain/admin
 
-После чего в терминале выполнить следующую команду.
+默认用户：admin
+
+默认密码：admin
+
+![主页](public/screen/02.png)
+
+![分类](public/screen/03.png)
+
+![网站](public/screen/04.png)
+
+
+## 其他
+
+本应用预设了一些站点数据，可以使用以下命令清除：
 
 ```shell
-npm run deploy
+$ php artisan webstack:clean
 ```
 
-Если нет ошибок в коде и свойство `homepage` указано верно, запустится сборка
-проекта в продакшен, после чего содержимое папки `build` будет помещено в ветку
-`gh-pages` на удаленном (remote) репозитории. Через какое-то время живую
-страницу можно будет посмотреть по адресу указанному в отредактированном
-свойстве `homepage`.
 
-## Configuration
+## 感谢
 
-- Все паршалы файлов стилей должны лежать в папке `src/sass` и импортироваться в
-  `src/sass/main.scss`
-- Изображения добавляйте в папку `src/images`, заранее оптимизировав их. Сборщик
-  просто копирует используемые изображения чтобы не нагружать вашу систему
-  оптимизацией десятков картинок, так как на слабых компьютерах это повесит
-  систему.
+前端设计：[**WebStackPage**](https://github.com/WebStackPage/WebStackPage.github.io)
+
+后台框架：[**laravel-admin**](https://github.com/z-song/laravel-admin)
+
+
+
+## License
+
+MIT
